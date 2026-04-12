@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.db.models import Sum
 from .models import Asset, Dividend
-from .forms import AssetForm
+from .forms import AssetForm, DividendForm
 
 
 @login_required
@@ -74,4 +74,61 @@ def asset_delete(request, pk):
         return redirect('asset_list')
     return render(request, 'portfolio/asset_confirm_delete.html', {
         'asset': asset
+    })
+
+@login_required
+def dividend_list(request):
+    dividends = Dividend.objects.filter(asset__user=request.user)
+    total_dividends = dividends.aggregate(
+        total=Sum('value'))['total'] or 0
+    return render(request, 'portfolio/dividend_list.html', {
+        'dividends': dividends,
+        'total_dividends': total_dividends,
+    })
+
+
+@login_required
+def dividend_add(request):
+    if request.method == 'POST':
+        form = DividendForm(request.user, request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Dividend added successfully!')
+            return redirect('dividend_list')
+    else:
+        form = DividendForm(request.user)
+    return render(request, 'portfolio/dividend_form.html', {
+        'form': form, 'title': 'Add Dividend'
+    })
+
+
+@login_required
+def dividend_edit(request, pk):
+    dividend = get_object_or_404(
+        Dividend, pk=pk, asset__user=request.user
+    )
+    if request.method == 'POST':
+        form = DividendForm(request.user, request.POST, instance=dividend)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Dividend updated successfully!')
+            return redirect('dividend_list')
+    else:
+        form = DividendForm(request.user, instance=dividend)
+    return render(request, 'portfolio/dividend_form.html', {
+        'form': form, 'title': 'Edit Dividend'
+    })
+
+
+@login_required
+def dividend_delete(request, pk):
+    dividend = get_object_or_404(
+        Dividend, pk=pk, asset__user=request.user
+    )
+    if request.method == 'POST':
+        dividend.delete()
+        messages.success(request, 'Dividend deleted successfully!')
+        return redirect('dividend_list')
+    return render(request, 'portfolio/dividend_confirm_delete.html', {
+        'dividend': dividend
     })
