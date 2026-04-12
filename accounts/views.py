@@ -11,7 +11,7 @@ def register_view(request):
             user = form.save()
             login(request, user)
             messages.success(request, 'Account created successfully!')
-            return redirect('login')
+            return redirect('dashboard')
     else:
         form = UserCreationForm()
     return render(request, 'accounts/register.html', {'form': form})
