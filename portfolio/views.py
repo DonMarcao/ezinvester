@@ -37,11 +37,35 @@ def asset_add(request):
     if request.method == 'POST':
         form = AssetForm(request.POST)
         if form.is_valid():
-            asset = form.save(commit=False)
-            asset.user = request.user
-            asset.save()
-            messages.success(request, 'Asset added successfully!')
-            return redirect('asset_list')
+            ticker = form.cleaned_data['ticker'].upper()
+            try:
+                import yfinance as yf
+                ticker_data = yf.Ticker(ticker)
+                info = ticker_data.fast_info
+                # fast_info raises exception or returns empty for invalid tickers
+                market_price = getattr(info, 'last_price', None)
+                if market_price is None:
+                    form.add_error('ticker', 'Invalid ticker. Please check and try again.')
+                    return render(request, 'portfolio/asset_form.html', {
+                        'form': form, 'title': 'Add Asset'
+                    })
+                asset = form.save(commit=False)
+                asset.ticker = ticker
+                asset.user = request.user
+                if not asset.name:
+                    try:
+                        full_info = ticker_data.info
+                        asset.name = full_info.get('longName') or full_info.get('shortName') or ticker
+                    except Exception:
+                        asset.name = ticker
+                asset.save()
+                messages.success(request, 'Asset added successfully!')
+                return redirect('asset_list')
+            except Exception:
+                form.add_error('ticker', 'Invalid ticker. Please check and try again.')
+                return render(request, 'portfolio/asset_form.html', {
+                    'form': form, 'title': 'Add Asset'
+                })
     else:
         form = AssetForm()
     return render(request, 'portfolio/asset_form.html', {
