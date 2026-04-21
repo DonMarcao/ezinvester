@@ -9,17 +9,39 @@ from .forms import AssetForm, DividendForm
 @login_required
 def dashboard(request):
     assets = Asset.objects.filter(user=request.user)
+
+    # Filtro por tipo
+    asset_type = request.GET.get('type')
+    if asset_type:
+        assets = assets.filter(asset_type=asset_type)
+
     total_invested = sum(a.total_value() for a in assets)
     asset_count = assets.count()
     total_dividends = Dividend.objects.filter(
         asset__user=request.user
     ).aggregate(total=Sum('value'))['total'] or 0
 
+    # Gráfico 1 — por asset individual
+    chart_labels = [a.ticker for a in assets]
+    chart_data = [float(a.total_value()) for a in assets]
+
+    # Gráfico 2 — por tipo de asset
+    type_totals = {}
+    for a in assets:
+        type_totals[a.asset_type] = type_totals.get(a.asset_type, 0) + float(a.total_value())
+    chart_type_labels = list(type_totals.keys())
+    chart_type_data = list(type_totals.values())
+
     context = {
         'assets': assets,
         'total_invested': total_invested,
         'asset_count': asset_count,
         'total_dividends': total_dividends,
+        'chart_labels': chart_labels,
+        'chart_data': chart_data,
+        'chart_type_labels': chart_type_labels,
+        'chart_type_data': chart_type_data,
+        'selected_type': asset_type or '',
     }
     return render(request, 'portfolio/dashboard.html', context)
 

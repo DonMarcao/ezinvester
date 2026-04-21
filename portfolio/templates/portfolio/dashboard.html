@@ -27,6 +27,37 @@
     </div>
 </div>
 
+<!-- Filter by type -->
+<div class="mb-4">
+    <a href="{% url 'dashboard' %}" class="filter-btn me-2 {% if not selected_type %}active{% endif %}">All</a>
+    <a href="?type=stock" class="filter-btn me-2 {% if selected_type == 'stock' %}active{% endif %}">Stocks</a>
+    <a href="?type=fii" class="filter-btn me-2 {% if selected_type == 'fii' %}active{% endif %}">FIIs</a>
+    <a href="?type=etf" class="filter-btn me-2 {% if selected_type == 'etf' %}active{% endif %}">ETFs</a>
+    <a href="?type=crypto" class="filter-btn {% if selected_type == 'crypto' %}active{% endif %}">Crypto</a>
+</div>
+
+<!-- charts -->
+{% if assets %}
+<div class="row mb-4">
+    <div class="col-md-6 mb-3">
+        <div class="card p-4">
+            <h6 class="mb-3 text-center fw-bold">Portfolio by Asset</h6>
+            <div style="position: relative; height: 280px;" class="d-flex justify-content-center">
+                <canvas id="chartByAsset"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mb-3">
+        <div class="card p-4">
+            <h6 class="mb-3 text-center fw-bold">Portfolio by Type</h6>
+            <div style="position: relative; height: 280px;" class="d-flex justify-content-center">
+                <canvas id="chartByType"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
 <!-- Assets Table -->
 <div class="card">
     <div class="card-body">
@@ -62,4 +93,59 @@
         {% endif %}
     </div>
 </div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const colors = [
+        '#2ecc71', '#3498db', '#e74c3c', '#f39c12',
+        '#9b59b6', '#1abc9c', '#e67e22', '#34495e'
+    ];
+
+    // # Chart 1 — by individual asset
+    const labels1 = {{ chart_labels|safe }};
+    const data1 = {{ chart_data|safe }};
+
+    if (labels1.length > 0) {
+        new Chart(document.getElementById('chartByAsset'), {
+            type: 'pie',
+            data: {
+                labels: labels1,
+                datasets: [{
+                    data: data1,
+                    backgroundColor: colors.slice(0, labels1.length),
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: { position: 'bottom' }
+                }
+            }
+        });
+    }
+
+    // # Chart 2 — by asset type
+    const labels2 = {{ chart_type_labels|safe }};
+    const data2 = {{ chart_type_data|safe }};
+
+    if (labels2.length > 0) {
+        new Chart(document.getElementById('chartByType'), {
+            type: 'pie',
+            data: {
+                labels: labels2,
+                datasets: [{
+                    data: data2,
+                    backgroundColor: colors.slice(0, labels2.length),
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: { position: 'bottom' }
+                }
+            }
+        });
+    }
+</script>
 {% endblock %}
