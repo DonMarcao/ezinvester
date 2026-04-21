@@ -10,6 +10,11 @@ class AssetForm(forms.ModelForm):
             'average_price', 'asset_type', 'purchase_date'
         ]
         widgets = {
+            'ticker': forms.TextInput(attrs={
+                'placeholder': 'e.g. PETR4',
+                'maxlength': '10',
+                'autocomplete': 'off',
+            }),
             'purchase_date': forms.DateInput(attrs={'type': 'date'}),
         }
 
