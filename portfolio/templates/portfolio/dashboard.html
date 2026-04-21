@@ -14,7 +14,7 @@
             <a class="navbar-brand fw-bold" href="{% url 'dashboard' %}">EzInvester</a>
             <div class="navbar-nav ms-auto">
                 <a class="nav-link text-white" href="#">Assets</a>
-                <a class="nav-link text-white" href="#">Dividends</a>
+                <a class="nav-link text-white" href="{% url 'dividend_list' %}">Dividends</a>
                 <span class="nav-link text-white">{{ request.user.username }}</span>
                 <a class="nav-link text-white" href="{% url 'logout' %}">Logout</a>
             </div>
