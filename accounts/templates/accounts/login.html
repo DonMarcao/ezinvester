@@ -8,13 +8,6 @@
         <div class="card p-4">
             <h2 class="text-center mb-2">⚡ EzInvester</h2>
             <p class="text-center text-muted mb-4">Welcome back</p>
-
-            {% if messages %}
-                {% for message in messages %}
-                    <div class="alert alert-danger">{{ message }}</div>
-                {% endfor %}
-            {% endif %}
-
             <form method="POST">
                 {% csrf_token %}
                 {% for field in form %}

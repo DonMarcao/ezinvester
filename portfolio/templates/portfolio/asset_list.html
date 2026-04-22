@@ -3,7 +3,8 @@
 {% block title %}Assets | EzInvester{% endblock %}
 
 {% block content %}
-<div class="d-flex justify-content-between align-items-center mb-4">
+
+<div class="page-header d-flex justify-content-between align-items-center">
     <h2 class="page-title mb-0">Your Assets</h2>
     <a href="{% url 'asset_add' %}" class="btn btn-success">+ Add Asset</a>
 </div>
@@ -16,12 +17,6 @@
     <a href="?type=REIT" class="filter-btn me-1">REIT</a>
     <a href="?type=CRYPTO" class="filter-btn me-1">Crypto</a>
 </div>
-
-{% if messages %}
-    {% for message in messages %}
-        <div class="alert alert-success mb-3">{{ message }}</div>
-    {% endfor %}
-{% endif %}
 
 {% if assets %}
     <div class="card">
@@ -56,6 +51,11 @@
         </table>
     </div>
 {% else %}
-    <p class="text-white">No assets yet. <a href="{% url 'asset_add' %}" class="text-success">Add your first asset</a></p>
+    <div class="card">
+        <div class="card-body text-center py-4">
+            <p class="text-muted mb-0">No assets yet. <a href="{% url 'asset_add' %}" class="text-success">Add your first asset</a></p>
+        </div>
+    </div>
 {% endif %}
+
 {% endblock %}

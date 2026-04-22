@@ -3,19 +3,14 @@
 {% block title %}Dividends | EzInvester{% endblock %}
 
 {% block content %}
-<div class="d-flex justify-content-between align-items-center mb-4">
+
+<div class="page-header d-flex justify-content-between align-items-center">
     <div>
         <h2 class="page-title mb-0">Your Dividends</h2>
-        <p class="text-white opacity-75 mb-0">Total received: <strong class="text-success">${{ total_dividends|floatformat:2 }}</strong></p>
+        <p class="text-dark opacity-75 mb-0">Total received: <strong class="text-success">${{ total_dividends|floatformat:2 }}</strong></p>
     </div>
     <a href="{% url 'dividend_add' %}" class="btn btn-success">+ Add Dividend</a>
 </div>
-
-{% if messages %}
-    {% for message in messages %}
-        <div class="alert alert-success mb-3">{{ message }}</div>
-    {% endfor %}
-{% endif %}
 
 {% if dividends %}
     <div class="card">
@@ -44,6 +39,11 @@
         </table>
     </div>
 {% else %}
-    <p class="text-white">No dividends yet. <a href="{% url 'dividend_add' %}" class="text-success">Add your first dividend</a></p>
+    <div class="card">
+        <div class="card-body text-center py-4">
+            <p class="text-muted mb-0">No dividends yet. <a href="{% url 'dividend_add' %}" class="text-success">Add your first dividend</a></p>
+        </div>
+    </div>
 {% endif %}
+
 {% endblock %}
