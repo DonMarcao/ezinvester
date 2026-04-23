@@ -21,14 +21,15 @@ def dashboard(request):
         asset__user=request.user
     ).aggregate(total=Sum('value'))['total'] or 0
 
-    # Gráfico 1 — por asset individual
+    # Chart 1 — individual asset
     chart_labels = [a.ticker for a in assets]
     chart_data = [float(a.total_value()) for a in assets]
 
-    # Gráfico 2 — por tipo de asset
+    # Chart 2 — asset type
     type_totals = {}
     for a in assets:
-        type_totals[a.asset_type] = type_totals.get(a.asset_type, 0) + float(a.total_value())
+        current = type_totals.get(a.asset_type, 0)
+        type_totals[a.asset_type] = current + float(a.total_value())
     chart_type_labels = list(type_totals.keys())
     chart_type_data = list(type_totals.values())
 
@@ -44,6 +45,7 @@ def dashboard(request):
         'selected_type': asset_type or '',
     }
     return render(request, 'portfolio/dashboard.html', context)
+
 
 @login_required
 def asset_list(request):
@@ -67,7 +69,9 @@ def asset_add(request):
                 # fast_info raises exception or returns empty for invalid tickers
                 market_price = getattr(info, 'last_price', None)
                 if market_price is None:
-                    form.add_error('ticker', 'Invalid ticker. Please check and try again.')
+                    form.add_error(
+                        'ticker', 'Invalid ticker. Please check and try again.'
+                    )
                     return render(request, 'portfolio/asset_form.html', {
                         'form': form, 'title': 'Add Asset'
                     })
@@ -77,14 +81,20 @@ def asset_add(request):
                 if not asset.name:
                     try:
                         full_info = ticker_data.info
-                        asset.name = full_info.get('longName') or full_info.get('shortName') or ticker
+                        asset.name = (
+                            full_info.get('longName')
+                            or full_info.get('shortName')
+                            or ticker
+                        )
                     except Exception:
                         asset.name = ticker
                 asset.save()
                 messages.success(request, 'Asset added successfully!')
                 return redirect('asset_list')
             except Exception:
-                form.add_error('ticker', 'Invalid ticker. Please check and try again.')
+                form.add_error(
+                    'ticker', 'Invalid ticker. Please check and try again.'
+                )
                 return render(request, 'portfolio/asset_form.html', {
                     'form': form, 'title': 'Add Asset'
                 })
@@ -121,6 +131,7 @@ def asset_delete(request, pk):
     return render(request, 'portfolio/asset_confirm_delete.html', {
         'asset': asset
     })
+
 
 @login_required
 def dividend_list(request):
