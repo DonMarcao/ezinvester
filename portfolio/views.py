@@ -10,10 +10,10 @@ from .forms import AssetForm, DividendForm
 def dashboard(request):
     assets = Asset.objects.filter(user=request.user)
 
-    # Filtro por tipo
+    # Type Filter
     asset_type = request.GET.get('type')
     if asset_type:
-        assets = assets.filter(asset_type=asset_type)
+        assets = assets.filter(asset_type=asset_type.upper())
 
     total_invested = sum(a.total_value() for a in assets)
     asset_count = assets.count()

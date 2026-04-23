@@ -30,10 +30,11 @@
 <!-- Filter by type -->
 <div class="mb-4">
     <a href="{% url 'dashboard' %}" class="filter-btn me-2 {% if not selected_type %}active{% endif %}">All</a>
-    <a href="?type=stock" class="filter-btn me-2 {% if selected_type == 'stock' %}active{% endif %}">Stocks</a>
-    <a href="?type=fii" class="filter-btn me-2 {% if selected_type == 'fii' %}active{% endif %}">FIIs</a>
-    <a href="?type=etf" class="filter-btn me-2 {% if selected_type == 'etf' %}active{% endif %}">ETFs</a>
-    <a href="?type=crypto" class="filter-btn {% if selected_type == 'crypto' %}active{% endif %}">Crypto</a>
+    <a href="?type=STOCK" class="filter-btn me-2 {% if selected_type == 'STOCK' %}active{% endif %}">Stocks</a>
+    <a href="?type=ETF" class="filter-btn me-2 {% if selected_type == 'ETF' %}active{% endif %}">ETFs</a>
+    <a href="?type=REIT" class="filter-btn me-2 {% if selected_type == 'REIT' %}active{% endif %}">REITs</a>
+    <a href="?type=CRYPTO" class="filter-btn me-2 {% if selected_type == 'CRYPTO' %}active{% endif %}">Crypto</a>
+    <a href="?type=TREASURY" class="filter-btn {% if selected_type == 'TREASURY' %}active{% endif %}">Treasury</a>
 </div>
 
 <!-- charts -->
