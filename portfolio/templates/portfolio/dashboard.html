@@ -67,28 +67,32 @@
             <a href="{% url 'asset_add' %}" class="btn btn-success btn-sm">+ Add Asset</a>
         </div>
         {% if assets %}
-            <table class="table table-hover mb-0">
-                <thead>
-                    <tr>
-                        <th>Ticker</th>
-                        <th>Name</th>
-                        <th>Shares</th>
-                        <th>Avg Price</th>
-                        <th>Total</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for asset in assets %}
-                    <tr>
-                        <td><strong>{{ asset.ticker }}</strong></td>
-                        <td>{{ asset.name }}</td>
-                        <td>{{ asset.shares }}</td>
-                        <td>${{ asset.average_price }}</td>
-                        <td>${{ asset.total_value|floatformat:2 }}</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+            <div class="card">
+                <div class="table-responsive">
+                    <table class="table table-hover mb-0">
+                        <thead>
+                            <tr>
+                                <th>Ticker</th>
+                                <th>Name</th>
+                                <th>Shares</th>
+                                <th>Avg Price</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for asset in assets %}
+                            <tr>
+                                <td><strong>{{ asset.ticker }}</strong></td>
+                                <td>{{ asset.name }}</td>
+                                <td>{{ asset.shares }}</td>
+                                <td>${{ asset.average_price }}</td>
+                                <td>${{ asset.total_value|floatformat:2 }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         {% else %}
             <p class="text-muted text-center py-4">No assets yet. <a href="{% url 'asset_add' %}">Add your first asset</a></p>
         {% endif %}

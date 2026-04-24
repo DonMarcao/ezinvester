@@ -21,35 +21,37 @@
 
 {% if assets %}
     <div class="card">
-        <table class="table table-hover mb-0">
-            <thead>
-                <tr>
-                    <th>Ticker</th>
-                    <th>Name</th>
-                    <th>Shares</th>
-                    <th>Avg Price</th>
-                    <th>Type</th>
-                    <th>Total</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for asset in assets %}
-                <tr>
-                    <td><strong>{{ asset.ticker }}</strong></td>
-                    <td>{{ asset.name }}</td>
-                    <td>{{ asset.shares }}</td>
-                    <td>${{ asset.average_price }}</td>
-                    <td>{{ asset.asset_type }}</td>
-                    <td>${{ asset.total_value|floatformat:2 }}</td>
-                    <td>
-                        <a href="{% url 'asset_edit' asset.pk %}" class="btn btn-sm btn-outline-success">Edit</a>
-                        <a href="{% url 'asset_delete' asset.pk %}" class="btn btn-sm btn-outline-danger">Delete</a>
-                    </td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+        <div class="table-responsive">
+            <table class="table table-hover mb-0" style="min-width: 600px;">
+                <thead>
+                    <tr>
+                        <th>Ticker</th>
+                        <th>Name</th>
+                        <th>Shares</th>
+                        <th>Avg Price</th>
+                        <th>Type</th>
+                        <th>Total</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for asset in assets %}
+                    <tr>
+                        <td><strong>{{ asset.ticker }}</strong></td>
+                        <td>{{ asset.name }}</td>
+                        <td>{{ asset.shares }}</td>
+                        <td>${{ asset.average_price }}</td>
+                        <td>{{ asset.asset_type }}</td>
+                        <td>${{ asset.total_value|floatformat:2 }}</td>
+                        <td class="text-nowrap">
+                            <a href="{% url 'asset_edit' asset.pk %}" class="btn btn-sm btn-outline-success">Edit</a>
+                            <a href="{% url 'asset_delete' asset.pk %}" class="btn btn-sm btn-outline-danger">Delete</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
 {% else %}
     <div class="card">

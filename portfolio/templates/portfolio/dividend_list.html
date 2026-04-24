@@ -14,29 +14,31 @@
 
 {% if dividends %}
     <div class="card">
-        <table class="table table-hover mb-0">
-            <thead>
-                <tr>
-                    <th>Asset</th>
-                    <th>Value</th>
-                    <th>Date</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for dividend in dividends %}
-                <tr>
-                    <td><strong>{{ dividend.asset.ticker }}</strong></td>
-                    <td>${{ dividend.value }}</td>
-                    <td>{{ dividend.date }}</td>
-                    <td>
-                        <a href="{% url 'dividend_edit' dividend.pk %}" class="btn btn-sm btn-outline-success">Edit</a>
-                        <a href="{% url 'dividend_delete' dividend.pk %}" class="btn btn-sm btn-outline-danger">Delete</a>
-                    </td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+        <div class="table-responsive">
+            <table class="table table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>Asset</th>
+                        <th>Value</th>
+                        <th>Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for dividend in dividends %}
+                    <tr>
+                        <td><strong>{{ dividend.asset.ticker }}</strong></td>
+                        <td>${{ dividend.value }}</td>
+                        <td>{{ dividend.date }}</td>
+                        <td class="text-nowrap">
+                            <a href="{% url 'dividend_edit' dividend.pk %}" class="btn btn-sm btn-outline-success">Edit</a>
+                            <a href="{% url 'dividend_delete' dividend.pk %}" class="btn btn-sm btn-outline-danger">Delete</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
 {% else %}
     <div class="card">
