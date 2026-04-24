@@ -11,11 +11,12 @@
 
 <!-- Filter -->
 <div class="mb-3">
-    <a href="{% url 'asset_list' %}" class="filter-btn me-1">All</a>
-    <a href="?type=STOCK" class="filter-btn me-1">Stock</a>
-    <a href="?type=ETF" class="filter-btn me-1">ETF</a>
-    <a href="?type=REIT" class="filter-btn me-1">REIT</a>
-    <a href="?type=CRYPTO" class="filter-btn me-1">Crypto</a>
+    <a href="{% url 'asset_list' %}" class="filter-btn me-1 {% if not selected_type %}active{% endif %}">All</a>
+    <a href="?type=STOCK" class="filter-btn me-1 {% if selected_type == 'STOCK' %}active{% endif %}">Stock</a>
+    <a href="?type=ETF" class="filter-btn me-1 {% if selected_type == 'ETF' %}active{% endif %}">ETF</a>
+    <a href="?type=REIT" class="filter-btn me-1 {% if selected_type == 'REIT' %}active{% endif %}">REIT</a>
+    <a href="?type=CRYPTO" class="filter-btn me-1 {% if selected_type == 'CRYPTO' %}active{% endif %}">Crypto</a>
+    <a href="?type=TREASURY" class="filter-btn {% if selected_type == 'TREASURY' %}active{% endif %}">Treasury</a>
 </div>
 
 {% if assets %}

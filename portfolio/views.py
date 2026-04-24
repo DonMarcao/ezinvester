@@ -53,8 +53,10 @@ def asset_list(request):
     asset_type = request.GET.get('type')
     if asset_type:
         assets = assets.filter(asset_type=asset_type)
-    return render(request, 'portfolio/asset_list.html', {'assets': assets})
-
+    return render(request, 'portfolio/asset_list.html', {
+        'assets': assets,
+        'selected_type': asset_type or '',
+    })
 
 @login_required
 def asset_add(request):
