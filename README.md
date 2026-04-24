@@ -443,8 +443,9 @@ ezinvester/
 | 18-19 | Visual polish, UI fixes |
 | 20-22 | PEP8 compliance, comments |
 | 23 | Testing documentation |
-| 24-30 | Heroku deployment |
-
+| 24-27 | Production config: WhiteNoise, dj-database-url, Procfile, collectstatic |
+| 28-29 | Heroku deploy and smoke tests *(pending)* |
+| 30 | README final update with live URL and screenshots *(pending)* |
 ---
 
 ## 🧪 Testing
