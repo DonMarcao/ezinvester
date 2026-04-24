@@ -11,11 +11,27 @@ class AssetForm(forms.ModelForm):
         ]
         widgets = {
             'ticker': forms.TextInput(attrs={
+                'class': 'form-control',
                 'placeholder': 'e.g. PETR4',
                 'maxlength': '10',
                 'autocomplete': 'off',
             }),
-            'purchase_date': forms.DateInput(attrs={'type': 'date'}),
+            'name': forms.TextInput(attrs={
+                'class': 'form-control',
+            }),
+            'shares': forms.NumberInput(attrs={
+                'class': 'form-control',
+            }),
+            'average_price': forms.NumberInput(attrs={
+                'class': 'form-control',
+            }),
+            'asset_type': forms.Select(attrs={
+                'class': 'form-select',
+            }),
+            'purchase_date': forms.DateInput(attrs={
+                'class': 'form-control',
+                'type': 'date',
+            }),
         }
 
 
@@ -24,7 +40,16 @@ class DividendForm(forms.ModelForm):
         model = Dividend
         fields = ['asset', 'value', 'date']
         widgets = {
-            'date': forms.DateInput(attrs={'type': 'date'}),
+            'asset': forms.Select(attrs={
+                'class': 'form-select',
+            }),
+            'value': forms.NumberInput(attrs={
+                'class': 'form-control',
+            }),
+            'date': forms.DateInput(attrs={
+                'class': 'form-control',
+                'type': 'date',
+            }),
         }
 
     def __init__(self, user, *args, **kwargs):
