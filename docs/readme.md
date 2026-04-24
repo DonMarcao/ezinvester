@@ -10,7 +10,7 @@
 **Repository:** https://github.com/DonMarcao/ezinvester  
 **Developer:** Marcus Machado  
 **Project Type:** Level 5 Full Stack Web Development - Milestone 3  
-**Submission Date:** 2026
+**Submission Date:** 28 April 2026
 
 ---
 
@@ -145,10 +145,17 @@ Wireframes created in Lucid.app during pre-project planning phase.
 
 | Page | Wireframe |
 |------|-----------|
-| Login | [docs/wireframes/login-wireframe.png](docs/wireframes/) |
-| Dashboard | [docs/wireframes/dashboard-wireframe.png](docs/wireframes/) |
-| Add Asset | [docs/wireframes/add-asset-wireframe.png](docs/wireframes/) |
-| 404 Page | [docs/wireframes/404-wireframe.png](docs/wireframes/) |
+| Page | Wireframe |
+|------|-----------|
+| Login | [docs/wireframes/01_login.png](docs/wireframes/01_login.png) |
+| Register | [docs/wireframes/02_register.png](docs/wireframes/02_register.png) |
+| Dashboard | [docs/wireframes/03_dashboard.png](docs/wireframes/03_dashboard.png) |
+| Assets List | [docs/wireframes/04_assets_list.png](docs/wireframes/04_assets_list.png) |
+| Add Asset | [docs/wireframes/05_add_asset.png](docs/wireframes/05_add_asset.png) |
+| Edit Asset | [docs/wireframes/06_edit_asset.png](docs/wireframes/06_edit_asset.png) |
+| Dividends List | [docs/wireframes/07_dividends_list.png](docs/wireframes/07_dividends_list.png) |
+| Add Dividend | [docs/wireframes/08_add_dividend.png](docs/wireframes/08_add_dividend.png) |
+| 404 Page | [docs/wireframes/09_404.png](docs/wireframes/09_404.png) |
 
 ---
 
