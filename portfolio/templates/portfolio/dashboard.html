@@ -28,13 +28,13 @@
 </div>
 
 <!-- Filter by type -->
-<div class="mb-4">
-    <a href="{% url 'dashboard' %}" class="filter-btn me-2 {% if not selected_type %}active{% endif %}">All</a>
-    <a href="?type=STOCK" class="filter-btn me-2 {% if selected_type == 'STOCK' %}active{% endif %}">Stocks</a>
-    <a href="?type=ETF" class="filter-btn me-2 {% if selected_type == 'ETF' %}active{% endif %}">ETFs</a>
-    <a href="?type=REIT" class="filter-btn me-2 {% if selected_type == 'REIT' %}active{% endif %}">REITs</a>
-    <a href="?type=CRYPTO" class="filter-btn me-2 {% if selected_type == 'CRYPTO' %}active{% endif %}">Crypto</a>
-    <a href="?type=TREASURY" class="filter-btn {% if selected_type == 'TREASURY' %}active{% endif %}">Treasury</a>
+<div class="mb-4 d-flex flex-nowrap overflow-auto pb-2" style="gap: 8px;">
+    <a href="{% url 'dashboard' %}" class="filter-btn flex-shrink-0 {% if not selected_type %}active{% endif %}">All</a>
+    <a href="?type=STOCK" class="filter-btn flex-shrink-0 {% if selected_type == 'STOCK' %}active{% endif %}">Stocks</a>
+    <a href="?type=ETF" class="filter-btn flex-shrink-0 {% if selected_type == 'ETF' %}active{% endif %}">ETFs</a>
+    <a href="?type=REIT" class="filter-btn flex-shrink-0 {% if selected_type == 'REIT' %}active{% endif %}">REITs</a>
+    <a href="?type=CRYPTO" class="filter-btn flex-shrink-0 {% if selected_type == 'CRYPTO' %}active{% endif %}">Crypto</a>
+    <a href="?type=TREASURY" class="filter-btn flex-shrink-0 {% if selected_type == 'TREASURY' %}active{% endif %}">Treasury</a>
 </div>
 
 <!-- charts -->
