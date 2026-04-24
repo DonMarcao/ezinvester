@@ -3,6 +3,8 @@ from django.contrib.auth.models import User
 
 
 class Asset(models.Model):
+    """Represents an investment asset owned by a user."""
+
     ASSET_TYPES = [
         ('STOCK', 'Stock'),
         ('ETF', 'ETF'),
@@ -23,6 +25,7 @@ class Asset(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def total_value(self):
+        """Returns total investment value: shares * average price."""
         return self.shares * self.average_price
 
     def __str__(self):
@@ -30,6 +33,8 @@ class Asset(models.Model):
 
 
 class Dividend(models.Model):
+    """Represents a dividend payment received for an asset."""
+
     asset = models.ForeignKey(
         Asset, on_delete=models.CASCADE, related_name='dividends'
     )

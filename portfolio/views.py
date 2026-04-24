@@ -8,9 +8,10 @@ from .forms import AssetForm, DividendForm
 
 @login_required
 def dashboard(request):
+    """Main dashboard showing portfolio summary, charts and asset table."""
     assets = Asset.objects.filter(user=request.user)
 
-    # Type Filter
+    # Optional filter by asset type from query string
     asset_type = request.GET.get('type')
     if asset_type:
         assets = assets.filter(asset_type=asset_type.upper())
@@ -21,11 +22,11 @@ def dashboard(request):
         asset__user=request.user
     ).aggregate(total=Sum('value'))['total'] or 0
 
-    # Chart 1 — individual asset
+    # Chart 1 — data for pie chart by individual asset
     chart_labels = [a.ticker for a in assets]
     chart_data = [float(a.total_value()) for a in assets]
 
-    # Chart 2 — asset type
+    # Chart 2 — data for pie chart grouped by asset type
     type_totals = {}
     for a in assets:
         current = type_totals.get(a.asset_type, 0)
@@ -49,17 +50,20 @@ def dashboard(request):
 
 @login_required
 def asset_list(request):
+    """Lists all assets for the logged-in user with optional type filter."""
     assets = Asset.objects.filter(user=request.user)
     asset_type = request.GET.get('type')
     if asset_type:
-        assets = assets.filter(asset_type=asset_type)
+        assets = assets.filter(asset_type=asset_type.upper())
     return render(request, 'portfolio/asset_list.html', {
         'assets': assets,
         'selected_type': asset_type or '',
     })
 
+
 @login_required
 def asset_add(request):
+    """Handles adding a new asset with yfinance ticker validation."""
     if request.method == 'POST':
         form = AssetForm(request.POST)
         if form.is_valid():
@@ -80,6 +84,7 @@ def asset_add(request):
                 asset = form.save(commit=False)
                 asset.ticker = ticker
                 asset.user = request.user
+                # Auto-fill name from yfinance if not provided
                 if not asset.name:
                     try:
                         full_info = ticker_data.info
@@ -109,6 +114,7 @@ def asset_add(request):
 
 @login_required
 def asset_edit(request, pk):
+    """Handles editing an existing asset."""
     asset = get_object_or_404(Asset, pk=pk, user=request.user)
     if request.method == 'POST':
         form = AssetForm(request.POST, instance=asset)
@@ -125,6 +131,7 @@ def asset_edit(request, pk):
 
 @login_required
 def asset_delete(request, pk):
+    """Handles deleting an asset after confirmation."""
     asset = get_object_or_404(Asset, pk=pk, user=request.user)
     if request.method == 'POST':
         asset.delete()
@@ -137,6 +144,7 @@ def asset_delete(request, pk):
 
 @login_required
 def dividend_list(request):
+    """Lists all dividends for the logged-in user with total sum."""
     dividends = Dividend.objects.filter(asset__user=request.user)
     total_dividends = dividends.aggregate(
         total=Sum('value'))['total'] or 0
@@ -148,6 +156,7 @@ def dividend_list(request):
 
 @login_required
 def dividend_add(request):
+    """Handles adding a new dividend record."""
     if request.method == 'POST':
         form = DividendForm(request.user, request.POST)
         if form.is_valid():
@@ -163,6 +172,7 @@ def dividend_add(request):
 
 @login_required
 def dividend_edit(request, pk):
+    """Handles editing an existing dividend record."""
     dividend = get_object_or_404(
         Dividend, pk=pk, asset__user=request.user
     )
@@ -181,6 +191,7 @@ def dividend_edit(request, pk):
 
 @login_required
 def dividend_delete(request, pk):
+    """Handles deleting a dividend record after confirmation."""
     dividend = get_object_or_404(
         Dividend, pk=pk, asset__user=request.user
     )
