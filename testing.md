@@ -164,10 +164,12 @@ Manual testing was chosen as the primary methodology for EzInvester for the foll
 
 ### Test Suite 8: Responsiveness (8 tests)
 
+*Note: Horizontal scroll on asset list table is expected behaviour on mobile due to number of columns*
+
 | Test Case | Description | Expected Result | Actual Result | Status |
 |-----------|-------------|-----------------|---------------|--------|
 | **TC-46** | Mobile 375px — dashboard | Layout adjusts, cards stack | Layout responsive | ✅ PASS |
-| **TC-47** | Mobile 375px — asset list | Table scrollable horizontally | Table scrolls correctly | ✅ PASS |
+| **TC-47** | Mobile 375px — asset list | Asset list table scrolls horizontally on mobile | Table scrolls correctly | ✅ PASS |
 | **TC-48** | Mobile 375px — forms | Form fields full width | Forms display correctly | ✅ PASS |
 | **TC-49** | Tablet 768px — dashboard | Cards in grid, charts side by side | Layout correct | ✅ PASS |
 | **TC-50** | Desktop 1280px — dashboard | Full layout, all elements visible | Layout correct | ✅ PASS |
@@ -249,6 +251,9 @@ All templates to be validated via [validator.w3.org](https://validator.w3.org/) 
 | #3 | Messages block duplicated in templates | April 2026 | Centralised in base.html |
 | #4 | Pie charts overflowing container | April 2026 | Added position:relative wrapper with fixed height |
 | #5 | Filter active state not highlighting | April 2026 | Added selected_type to asset_list context |
+| #6 | Auth form inputs misaligned on mobile | April 2026 | Created CustomUserCreationForm with form-control class |
+| #7 | Filter buttons wrapping on small screens | April 2026 | Added flex-nowrap overflow-auto to filter container |
+| #8 | Navbar links exposed on mobile | April 2026 | Added hamburger menu with Bootstrap collapse |
 
 ---
 

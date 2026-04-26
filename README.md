@@ -6,7 +6,7 @@
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?logo=postgresql&logoColor=white)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?logo=bootstrap&logoColor=white)
 
-**Live Site:** [EzInvester on Heroku](#) *(link after deploy)*  
+**Live Site:** https://ezinvester-6c72f2b770d1.herokuapp.com/
 **Repository:** https://github.com/DonMarcao/ezinvester  
 **Developer:** Marcus Machado  
 **Project Type:** Level 5 Full Stack Web Development - Milestone 3  
@@ -299,7 +299,7 @@ Custom 404 page displayed for all invalid URLs when `DEBUG=False`. Includes a "G
 
 ### Heroku Deployment
 
-**Live Site:** *(URL after deploy)*
+**Live Site:** https://ezinvester-6c72f2b770d1.herokuapp.com/
 
 #### Pre-Deployment Checklist
 
