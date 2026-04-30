@@ -15,9 +15,10 @@
 2. [Testing Methodology](#testing-methodology)
 3. [Manual Test Cases](#manual-test-cases)
 4. [Code Validation](#code-validation)
-5. [Cross-Browser Testing](#cross-browser-testing)
-6. [404 Page](#404-error-page)
-7. [Bug Tracking](#bug-tracking)
+5. [Lighthouse Performance](#lighthouse-performance)
+6. [Cross-Browser Testing](#cross-browser-testing)
+7. [404 Page](#404-error-page)
+8. [Bug Tracking](#bug-tracking)
 
 ---
 
@@ -34,9 +35,9 @@
 - **Known Issues:** 1 (cosmetic, non-blocking)
 
 **Validation:**
-- **HTML:** 0 errors (W3C) *(to be confirmed on live site)*
-- **CSS:** 0 errors (W3C) *(to be confirmed on live site)*
-- **Python:** 0 errors (flake8)
+- **HTML:** 0 errors (W3C) ✅
+- **CSS:** 0 errors (W3C) ✅
+- **Python:** 0 errors (flake8) ✅
 
 ---
 
@@ -63,8 +64,9 @@ Manual testing was chosen as the primary methodology for EzInvester for the foll
 #### Automated Validation Tools Used
 
 - **flake8:** Python PEP8 compliance (0 errors)
-- **W3C HTML Validator:** HTML validation *(to be completed on live site)*
-- **W3C CSS Validator:** CSS validation *(to be completed on live site)*
+- **W3C HTML Validator:** HTML validation via live URL ✅
+- **W3C CSS Validator:** CSS validation via live URL ✅
+- **Lighthouse:** Performance, Accessibility, Best Practices, SEO ✅
 
 ---
 
@@ -186,32 +188,60 @@ Manual testing was chosen as the primary methodology for EzInvester for the foll
 
 ## ✅ Code Validation
 
-> ⚠️ **Note:** W3C HTML/CSS validation and Lighthouse scores will be completed after Heroku deployment using the live URL. Results will be updated in commits 31+.
-
 ### Python — flake8
-flake8 portfolio/ accounts/
 
-**Result:** 0 errors
+```
+flake8 portfolio/ accounts/
+```
+
+**Result:** 0 errors ✅
+
+---
 
 ### HTML — W3C Validator
 
-All templates to be validated via [validator.w3.org](https://validator.w3.org/) after deployment.
+All templates validated via [validator.w3.org](https://validator.w3.org/) using the live Heroku URL.
 
 | Template | Errors | Status |
 |----------|--------|--------|
-| base.html | *(pending)* | 🔜 |
-| dashboard.html | *(pending)* | 🔜 |
-| asset_list.html | *(pending)* | 🔜 |
-| asset_form.html | *(pending)* | 🔜 |
-| dividend_list.html | *(pending)* | 🔜 |
-| dividend_form.html | *(pending)* | 🔜 |
-| login.html | *(pending)* | 🔜 |
-| register.html | *(pending)* | 🔜 |
-| 404.html | *(pending)* | 🔜 |
+| base.html | 0 | ✅ PASS |
+| dashboard.html | 0 | ✅ PASS |
+| asset_list.html | 0 | ✅ PASS |
+| asset_form.html | 0 | ✅ PASS |
+| dividend_list.html | 0 | ✅ PASS |
+| dividend_form.html | 0 | ✅ PASS |
+| login.html | 0 | ✅ PASS |
+| register.html | 0 | ✅ PASS |
+| 404.html | 0 | ✅ PASS |
+
+Screenshots available in `docs/validation/`.
+
+---
 
 ### CSS — W3C Validator
 
-**Result:** *(pending — to be completed after deployment)*
+Validated via [jigsaw.w3.org/css-validator](https://jigsaw.w3.org/css-validator/) using the live Heroku URL.
+
+**Result:** 0 errors ✅
+
+Screenshot available in `docs/validation/`.
+
+---
+
+## 📊 Lighthouse Performance
+
+Tested on the live Heroku deployment: [https://ezinvester-6c72f2b770d1.herokuapp.com/dashboard/](https://ezinvester-6c72f2b770d1.herokuapp.com/dashboard/)
+
+| Category | Mobile | Desktop |
+|----------|--------|---------|
+| Performance | 96 | 99 |
+| Accessibility | 100 | 100 |
+| Best Practices | 100 | 100 |
+| SEO | 100 | 100 |
+
+Screenshots available in `docs/lighthouse/`.
+
+> Note: Performance scores may vary slightly between runs due to network latency and Heroku server load. Scores above represent the results obtained on the final testing session in April 2026.
 
 ---
 
@@ -220,8 +250,8 @@ All templates to be validated via [validator.w3.org](https://validator.w3.org/) 
 | Browser | Version | Result |
 |---------|---------|--------|
 | Chrome | 124+ | ✅ PASS |
-| Edge | *(to be tested on live site)* | 🔜 Pending |
-| Opera GX | *(to be tested on live site)* | 🔜 Pending |
+| Edge | 124+ | ✅ PASS |
+| Opera GX | Latest | ✅ PASS |
 
 ---
 
@@ -263,11 +293,14 @@ All templates to be validated via [validator.w3.org](https://validator.w3.org/) 
 
 - **Test Coverage:** 53/53 = 100% pass rate
 - **Python Code Quality:** 0 flake8 errors
+- **HTML Validation:** 0 errors across 9 templates
+- **CSS Validation:** 0 errors
+- **Lighthouse:** 96–99 Performance / 100 Accessibility / 100 Best Practices / 100 SEO
+- **Cross-Browser:** Tested and passing on Chrome, Edge and Opera GX
 - **Critical Bugs:** 0
-- **Cross-Browser:** *(to be completed after deployment)*
 
 **Testing Documentation Completed:** April 2026  
 **Tester:** Marcus Machado  
-**Status:** ✅ All tests passed, ready for deployment
+**Status:** ✅ All tests passed, ready for submission
 
 [← Back to README](README.md)

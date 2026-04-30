@@ -6,11 +6,11 @@
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?logo=postgresql&logoColor=white)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?logo=bootstrap&logoColor=white)
 
-**Live Site:** https://ezinvester-6c72f2b770d1.herokuapp.com/
-**Repository:** https://github.com/DonMarcao/ezinvester  
+**Live Site:** <a href="https://ezinvester-6c72f2b770d1.herokuapp.com/" target="_blank">https://ezinvester-6c72f2b770d1.herokuapp.com/</a>  
+**Repository:** <a href="https://github.com/DonMarcao/ezinvester" target="_blank">https://github.com/DonMarcao/ezinvester</a>  
 **Developer:** Marcus Machado  
 **Project Type:** Level 5 Full Stack Web Development - Milestone 3  
-**Submission Date:** 28 April 2026
+**Submission Date:** April 2026
 
 ---
 
@@ -135,7 +135,7 @@ A middle-ground option was also considered: hiding forms inline on the list page
 
 Prior to wireframing, AI-generated visual mockups were created as internal design reference guides to establish a consistent visual language — standardising the colour scheme (green/blue/black/white), navbar layout, typography style, and component placement.
 
-*Tool used:* Google Gemini image generation. 9 reference images were produced covering all core pages. These were used exclusively as internal design guides and are not included in the project submission. All official wireframes were produced independently in Balsamiq.
+*Tool used:* Google Gemini image generation. 9 reference images were produced covering all core pages. These were used exclusively as internal design guides and are not included in the project submission. All official wireframes were produced independently in Lucid.app.
 
 ---
 
@@ -145,17 +145,15 @@ Wireframes created in Lucid.app during pre-project planning phase.
 
 | Page | Wireframe |
 |------|-----------|
-| Page | Wireframe |
-|------|-----------|
-| Login | [docs/wireframes/01_login.png](docs/wireframes/01_login.png) |
-| Register | [docs/wireframes/02_register.png](docs/wireframes/02_register.png) |
-| Dashboard | [docs/wireframes/03_dashboard.png](docs/wireframes/03_dashboard.png) |
-| Assets List | [docs/wireframes/04_assets_list.png](docs/wireframes/04_assets_list.png) |
-| Add Asset | [docs/wireframes/05_add_asset.png](docs/wireframes/05_add_asset.png) |
-| Edit Asset | [docs/wireframes/06_edit_asset.png](docs/wireframes/06_edit_asset.png) |
-| Dividends List | [docs/wireframes/07_dividends_list.png](docs/wireframes/07_dividends_list.png) |
-| Add Dividend | [docs/wireframes/08_add_dividend.png](docs/wireframes/08_add_dividend.png) |
-| 404 Page | [docs/wireframes/09_404.png](docs/wireframes/09_404.png) |
+| Login | <a href="docs/wireframes/01_login.png" target="_blank">docs/wireframes/01_login.png</a> |
+| Register | <a href="docs/wireframes/02_register.png" target="_blank">docs/wireframes/02_register.png</a> |
+| Dashboard | <a href="docs/wireframes/03_dashboard.png" target="_blank">docs/wireframes/03_dashboard.png</a> |
+| Assets List | <a href="docs/wireframes/04_assets_list.png" target="_blank">docs/wireframes/04_assets_list.png</a> |
+| Add Asset | <a href="docs/wireframes/05_add_asset.png" target="_blank">docs/wireframes/05_add_asset.png</a> |
+| Edit Asset | <a href="docs/wireframes/06_edit_asset.png" target="_blank">docs/wireframes/06_edit_asset.png</a> |
+| Dividends List | <a href="docs/wireframes/07_dividends_list.png" target="_blank">docs/wireframes/07_dividends_list.png</a> |
+| Add Dividend | <a href="docs/wireframes/08_add_dividend.png" target="_blank">docs/wireframes/08_add_dividend.png</a> |
+| 404 Page | <a href="docs/wireframes/09_404.png" target="_blank">docs/wireframes/09_404.png</a> |
 
 ---
 
@@ -186,19 +184,20 @@ Wireframes created in Lucid.app during pre-project planning phase.
 
 ### Database Schema
 
-User (Django built-in)
-└── Asset (one-to-many)
-├── ticker: CharField
-├── name: CharField
-├── shares: DecimalField
-├── average_price: DecimalField
-├── asset_type: CharField (choices)
-├── purchase_date: DateField
-└── Dividend (one-to-many)
-├── value: DecimalField
-└── date: DateField
+| Model | Field | Type |
+|-------|-------|------|
+| **Asset** | ticker | CharField |
+| | name | CharField |
+| | shares | DecimalField |
+| | average_price | DecimalField |
+| | asset_type | CharField (choices) |
+| | purchase_date | DateField |
+| **Dividend** | value | DecimalField |
+| | date | DateField |
 
-ERD documented in `docs/erd/`.
+Relationships: User → Asset (one-to-many) → Dividend (one-to-many)
+
+ERD: <a href="docs/erd/ezinvester.png" target="_blank">docs/erd/ezinvester.png</a>
 
 ---
 
@@ -238,12 +237,12 @@ ERD documented in `docs/erd/`.
 - Active filter highlighting
 - Auto-dismiss alerts (4 seconds)
 - form-control Bootstrap styling on all inputs
-- Spinner on form submit button
+- Hamburger menu on mobile
 
 #### 6. ♿ Accessibility
 - ARIA labels on navbar and buttons
-- Semantic HTML5
-- role="alert" on error messages
+- Semantic HTML5 with `<main>` landmark
+- `role="alert"` on error messages
 - Keyboard navigable
 
 ### 404 Page
@@ -267,11 +266,11 @@ Custom 404 page displayed for all invalid URLs when `DEBUG=False`. Includes a "G
 ### Languages
 - **Python 3** — Backend logic
 - **HTML5** — Templates (Django template engine)
-- **CSS3** — Custom styles in base.html
+- **CSS3** — Custom styles in style.css
 - **JavaScript** — Chart.js, auto-uppercase, auto-dismiss alerts
 
 ### Frameworks & Libraries
-- **Django 6** — Full-stack web framework
+- **Django** — Full-stack web framework
 - **Bootstrap 5.3** — Responsive UI components
 - **Chart.js** (CDN) — Pie charts
 - **yfinance** — Ticker validation and name auto-fill
@@ -299,19 +298,19 @@ Custom 404 page displayed for all invalid URLs when `DEBUG=False`. Includes a "G
 
 ### Heroku Deployment
 
-**Live Site:** https://ezinvester-6c72f2b770d1.herokuapp.com/
+**Live Site:** <a href="https://ezinvester-6c72f2b770d1.herokuapp.com/" target="_blank">https://ezinvester-6c72f2b770d1.herokuapp.com/</a>
 
 #### Pre-Deployment Checklist
 
-- [ ] `requirements.txt` updated (`pip freeze > requirements.txt`)
-- [ ] `Procfile` created
-- [ ] `runtime.txt` created
-- [ ] WhiteNoise configured in `settings.py`
-- [ ] `dj-database-url` configured
-- [ ] `DEBUG=False` for production
-- [ ] `ALLOWED_HOSTS` includes Heroku URL
-- [ ] `SECRET_KEY` set as Heroku config var
-- [ ] Static files collected (`python manage.py collectstatic`)
+- [x] `requirements.txt` updated (`pip freeze > requirements.txt`)
+- [x] `Procfile` created
+- [x] `runtime.txt` created
+- [x] WhiteNoise configured in `settings.py`
+- [x] `dj-database-url` configured
+- [x] `DEBUG=False` for production
+- [x] `ALLOWED_HOSTS` includes Heroku URL
+- [x] `SECRET_KEY` set as Heroku config var
+- [x] Static files collected (`python manage.py collectstatic`)
 
 #### Deployment Steps
 
@@ -378,6 +377,7 @@ python manage.py runserver
 
 #### File Structure
 
+```
 ezinvester/
 ├── accounts/               # Authentication app
 │   ├── views.py            # Register, login, logout views
@@ -389,17 +389,21 @@ ezinvester/
 │   ├── urls.py
 │   └── static/
 │       └── portfolio/
+│           ├── css/        # style.css
 │           └── images/     # Background images
 ├── templates/
 │   ├── base.html           # Global template
+│   ├── robots.txt          # SEO robots file
 │   ├── accounts/           # Login, register templates
 │   └── portfolio/          # Dashboard, asset, dividend templates
 ├── ezinvester/
 │   ├── settings.py
 │   └── urls.py
 ├── docs/
-│   ├── erd/                # Database ERD
-│   └── wireframes/         # Design wireframes
+│   ├── erd/                # ezinvester.png
+│   ├── wireframes/         # 01_login.png … 09_404.png
+│   ├── validation/         # W3C HTML & CSS screenshots
+│   └── lighthouse/         # Lighthouse mobile & desktop screenshots
 ├── .env                    # Environment variables (not committed)
 ├── .flake8                 # flake8 config
 ├── Procfile                # Heroku process file
@@ -408,6 +412,7 @@ ezinvester/
 ├── manage.py
 ├── README.md
 └── TESTING.md
+```
 
 ---
 
@@ -415,7 +420,7 @@ ezinvester/
 
 ### Version Control Strategy
 
-**Repository:** https://github.com/DonMarcao/ezinvester  
+**Repository:** <a href="https://github.com/DonMarcao/ezinvester" target="_blank">https://github.com/DonMarcao/ezinvester</a>  
 **Primary Branch:** `main`  
 **Commit Philosophy:** Small, focused commits with descriptive messages
 
@@ -435,28 +440,63 @@ ezinvester/
 
 | Commit | Description |
 |--------|-------------|
-| 1-4 | Project setup, documentation, wireframes |
-| 5-8 | Models, authentication, dashboard |
-| 9-12 | Asset CRUD, dividend CRUD, base template |
-| 13-15 | yfinance validation, pie charts, filters |
-| 16-17 | JS enhancements, ARIA accessibility |
-| 18-19 | Visual polish, UI fixes |
-| 20-22 | PEP8 compliance, comments |
-| 23 | Testing documentation |
-| 24-27 | Production config: WhiteNoise, dj-database-url, Procfile, collectstatic |
-| 28-29 | Heroku deploy and smoke tests *(pending)* |
-| 30 | README final update with live URL and screenshots *(pending)* |
+| 1–4 | Project setup, documentation, wireframes |
+| 5–8 | Models, authentication, dashboard |
+| 9–12 | Asset CRUD, dividend CRUD, base template |
+| 13–15 | yfinance validation, pie charts, filters |
+| 16–17 | JS enhancements, ARIA accessibility |
+| 18–19 | Visual polish, UI fixes |
+| 20–22 | PEP8 compliance, comments, flake8 |
+| 23–24 | Testing documentation, responsiveness suite |
+| 25–27 | Production config: WhiteNoise, dj-database-url, Procfile |
+| 28–29 | Heroku deploy, smoke tests, static files |
+| 30 | SEO improvements: meta description, robots.txt |
+| 31 | Accessibility: main landmark added to base.html |
+| 32 | Final README and TESTING.md update |
+
 ---
 
 ## 🧪 Testing
 
-**Comprehensive testing documentation:** [TESTING.md](TESTING.md)
+**Comprehensive testing documentation:** <a href="TESTING.md" target="_blank">TESTING.md</a>
 
-**Quick Stats:**
-- **Total Tests:** 45
-- **Pass Rate:** 100%
+### Quick Stats
+
+- **Total Tests:** 53
+- **Pass Rate:** 100% (53/53)
 - **Critical Bugs:** 0
 - **Python:** 0 flake8 errors
+- **HTML:** 0 W3C errors (9 templates)
+- **CSS:** 0 W3C errors
+
+### Lighthouse Scores (Dashboard — Live Site)
+
+| Category | Mobile | Desktop |
+|----------|--------|---------|
+| Performance | 96 | 99 |
+| Accessibility | 100 | 100 |
+| Best Practices | 100 | 100 |
+| SEO | 100 | 100 |
+
+Screenshots: <a href="docs/lighthouse/lighthouse_mobile_validator.png" target="_blank">Mobile</a> | <a href="docs/lighthouse/lighthouse_desktop_validator.png" target="_blank">Desktop</a>
+
+### W3C Validation
+
+| Template | Screenshot |
+|----------|------------|
+| Login | <a href="docs/validation/login_validator.png" target="_blank">docs/validation/login_validator.png</a> |
+| Register | <a href="docs/validation/register_validator.png" target="_blank">docs/validation/register_validator.png</a> |
+| Dashboard | <a href="docs/validation/dashboard_validator.png" target="_blank">docs/validation/dashboard_validator.png</a> |
+| Asset List | <a href="docs/validation/asset_list_validator.png" target="_blank">docs/validation/asset_list_validator.png</a> |
+| Add Asset | <a href="docs/validation/asset_add_validator.png" target="_blank">docs/validation/asset_add_validator.png</a> |
+| Edit Asset | <a href="docs/validation/asset_edit_validator.png" target="_blank">docs/validation/asset_edit_validator.png</a> |
+| Delete Asset | <a href="docs/validation/asset_delete_validator.png" target="_blank">docs/validation/asset_delete_validator.png</a> |
+| Dividends List | <a href="docs/validation/dividends_list_validator.png" target="_blank">docs/validation/dividends_list_validator.png</a> |
+| Add Dividend | <a href="docs/validation/dividends_add_validator.png" target="_blank">docs/validation/dividends_add_validator.png</a> |
+| Edit Dividend | <a href="docs/validation/dividends_edit_validator.png" target="_blank">docs/validation/dividends_edit_validator.png</a> |
+| Delete Dividend | <a href="docs/validation/dividends_delete_validator.png" target="_blank">docs/validation/dividends_delete_validator.png</a> |
+| 404 Page | <a href="docs/validation/404_validator.png" target="_blank">docs/validation/404_validator.png</a> |
+| CSS | <a href="docs/validation/css_validator.png" target="_blank">docs/validation/css_validator.png</a> |
 
 ### Test Coverage
 
@@ -467,6 +507,7 @@ ezinvester/
 - ✅ Dashboard (6 tests)
 - ✅ Navigation & Security (6 tests)
 - ✅ UI & Alerts (5 tests)
+- ✅ Responsiveness (8 tests)
 
 ---
 
@@ -477,31 +518,31 @@ ezinvester/
 **yfinance Integration**
 - Library: yfinance by Ran Aroussi
 - License: Apache 2.0
-- Source: https://github.com/ranaroussi/yfinance
+- Source: <a href="https://github.com/ranaroussi/yfinance" target="_blank">https://github.com/ranaroussi/yfinance</a>
 - Usage: Ticker validation and asset name auto-fill
 
 **Chart.js**
 - Library: Chart.js
 - License: MIT
-- Source: https://www.chartjs.org/
+- Source: <a href="https://www.chartjs.org/" target="_blank">https://www.chartjs.org/</a>
 - Usage: Portfolio pie charts
 
 **Bootstrap 5.3**
 - Framework: Bootstrap
 - License: MIT
-- Source: https://getbootstrap.com/
+- Source: <a href="https://getbootstrap.com/" target="_blank">https://getbootstrap.com/</a>
 - Usage: Responsive UI components
 
 **dj-database-url**
 - Library: dj-database-url
 - License: BSD
-- Source: https://github.com/jazzband/dj-database-url
+- Source: <a href="https://github.com/jazzband/dj-database-url" target="_blank">https://github.com/jazzband/dj-database-url</a>
 - Usage: Heroku PostgreSQL URL parsing
 
 **WhiteNoise**
 - Library: WhiteNoise
 - License: MIT
-- Source: http://whitenoise.evans.io/
+- Source: <a href="http://whitenoise.evans.io/" target="_blank">http://whitenoise.evans.io/</a>
 - Usage: Static file serving in production
 
 ### Original Implementation
@@ -519,9 +560,9 @@ All application logic, features and implementations created by Marcus Machado, i
 ### Acknowledgments
 
 - **Code Institute** — Level 5 Full Stack Web Development course
-- **Django Documentation** — https://docs.djangoproject.com/
-- **Bootstrap Documentation** — https://getbootstrap.com/docs/
-- **Chart.js Documentation** — https://www.chartjs.org/docs/
+- **Django Documentation** — <a href="https://docs.djangoproject.com/" target="_blank">https://docs.djangoproject.com/</a>
+- **Bootstrap Documentation** — <a href="https://getbootstrap.com/docs/" target="_blank">https://getbootstrap.com/docs/</a>
+- **Chart.js Documentation** — <a href="https://www.chartjs.org/docs/" target="_blank">https://www.chartjs.org/docs/</a>
 - **Stack Overflow Community** — Problem-solving assistance
 
 ---
@@ -533,9 +574,9 @@ MIT License — Copyright (c) 2026 Marcus Machado
 ---
 
 **Developer:** Marcus Machado  
-**GitHub:** [@DonMarcao](https://github.com/DonMarcao)  
-**Status:** 🚀 Deploying to Heroku
+**GitHub:** <a href="https://github.com/DonMarcao" target="_blank">@DonMarcao</a>  
+**Status:** ✅ Live on Heroku
 
 ---
 
-⭐ **[View Complete Testing Documentation →](TESTING.md)** ⭐
+⭐ **<a href="TESTING.md" target="_blank">View Complete Testing Documentation →</a>** ⭐
