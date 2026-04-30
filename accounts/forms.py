@@ -10,9 +10,10 @@ class CustomUserCreationForm(UserCreationForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        for field in self.fields.values():
-            field.widget.attrs['class'] = 'form-control'
-            field.widget.attrs.pop('aria-describedby', None)
+        for name in self.fields:
+            widget = self.fields[name].widget
+            widget.attrs['class'] = 'form-control'
+            widget.attrs.pop('aria-describedby', None)
 
 
 class CustomAuthenticationForm(AuthenticationForm):
