@@ -16,27 +16,27 @@
 
 ## 📋 Table of Contents
 
-1. [Project Overview](#project-overview)
-2. [User Experience Design (UX)](#user-experience-design-ux)
+1. [Project Overview](#-project-overview)
+2. [User Experience Design (UX)](#-user-experience-design-ux)
    - [User Stories](#user-stories)
    - [Design Process](#design-process)
    - [Wireframes](#wireframes)
    - [Color Scheme](#color-scheme)
    - [Typography](#typography)
    - [Database Schema](#database-schema)
-3. [Features](#features)
+3. [Features](#️-features)
    - [Existing Features](#existing-features)
    - [404 Page](#404-page)
    - [Features Left to Implement](#features-left-to-implement)
-4. [Technologies Used](#technologies-used)
-5. [Deployment](#deployment)
+4. [Technologies Used](#️-technologies-used)
+5. [Deployment](#-deployment)
    - [Heroku Deployment](#heroku-deployment)
    - [Local Development](#local-development)
-6. [Development Process](#development-process)
-   - [Version Control](#version-control-strategy)
+6. [Development Process](#-development-process)
+   - [Version Control Strategy](#version-control-strategy)
    - [Commit History](#commit-history)
-7. [Testing](#testing)
-8. [Credits](#credits)
+7. [Testing](#-testing)
+8. [Credits](#-credits)
 
 ---
 
