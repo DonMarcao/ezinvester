@@ -6,8 +6,8 @@
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?logo=postgresql&logoColor=white)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?logo=bootstrap&logoColor=white)
 
-**Live Site:** <a href="https://ezinvester-6c72f2b770d1.herokuapp.com/" target="_blank">https://ezinvester-6c72f2b770d1.herokuapp.com/</a>  
-**Repository:** <a href="https://github.com/DonMarcao/ezinvester" target="_blank">https://github.com/DonMarcao/ezinvester</a>  
+**Live Site:** https://ezinvester-6c72f2b770d1.herokuapp.com/  
+**Repository:** https://github.com/DonMarcao/ezinvester  
 **Developer:** Marcus Machado  
 **Project Type:** Level 5 Full Stack Web Development - Milestone 3  
 **Submission Date:** April 2026
@@ -145,15 +145,15 @@ Wireframes created in Lucid.app during pre-project planning phase.
 
 | Page | Wireframe |
 |------|-----------|
-| Login | <a href="docs/wireframes/01_login.png" target="_blank">docs/wireframes/01_login.png</a> |
-| Register | <a href="docs/wireframes/02_register.png" target="_blank">docs/wireframes/02_register.png</a> |
-| Dashboard | <a href="docs/wireframes/03_dashboard.png" target="_blank">docs/wireframes/03_dashboard.png</a> |
-| Assets List | <a href="docs/wireframes/04_assets_list.png" target="_blank">docs/wireframes/04_assets_list.png</a> |
-| Add Asset | <a href="docs/wireframes/05_add_asset.png" target="_blank">docs/wireframes/05_add_asset.png</a> |
-| Edit Asset | <a href="docs/wireframes/06_edit_asset.png" target="_blank">docs/wireframes/06_edit_asset.png</a> |
-| Dividends List | <a href="docs/wireframes/07_dividends_list.png" target="_blank">docs/wireframes/07_dividends_list.png</a> |
-| Add Dividend | <a href="docs/wireframes/08_add_dividend.png" target="_blank">docs/wireframes/08_add_dividend.png</a> |
-| 404 Page | <a href="docs/wireframes/09_404.png" target="_blank">docs/wireframes/09_404.png</a> |
+| Login | [docs/wireframes/01_login.png](docs/wireframes/01_login.png) |
+| Register | [docs/wireframes/02_register.png](docs/wireframes/02_register.png) |
+| Dashboard | [docs/wireframes/03_dashboard.png](docs/wireframes/03_dashboard.png) |
+| Assets List | [docs/wireframes/04_assets_list.png](docs/wireframes/04_assets_list.png) |
+| Add Asset | [docs/wireframes/05_add_asset.png](docs/wireframes/05_add_asset.png) |
+| Edit Asset | [docs/wireframes/06_edit_asset.png](docs/wireframes/06_edit_asset.png) |
+| Dividends List | [docs/wireframes/07_dividends_list.png](docs/wireframes/07_dividends_list.png) |
+| Add Dividend | [docs/wireframes/08_add_dividend.png](docs/wireframes/08_add_dividend.png) |
+| 404 Page | [docs/wireframes/09_404.png](docs/wireframes/09_404.png) |
 
 ---
 
@@ -197,7 +197,7 @@ Wireframes created in Lucid.app during pre-project planning phase.
 
 Relationships: User → Asset (one-to-many) → Dividend (one-to-many)
 
-ERD: <a href="docs/erd/ezinvester.png" target="_blank">docs/erd/ezinvester.png</a>
+ERD: [docs/erd/ezinvester.png](docs/erd/ezinvester.png)
 
 ---
 
@@ -298,7 +298,7 @@ Custom 404 page displayed for all invalid URLs when `DEBUG=False`. Includes a "G
 
 ### Heroku Deployment
 
-**Live Site:** <a href="https://ezinvester-6c72f2b770d1.herokuapp.com/" target="_blank">https://ezinvester-6c72f2b770d1.herokuapp.com/</a>
+**Live Site:** https://ezinvester-6c72f2b770d1.herokuapp.com/
 
 #### Pre-Deployment Checklist
 
@@ -420,7 +420,7 @@ ezinvester/
 
 ### Version Control Strategy
 
-**Repository:** <a href="https://github.com/DonMarcao/ezinvester" target="_blank">https://github.com/DonMarcao/ezinvester</a>  
+**Repository:** https://github.com/DonMarcao/ezinvester  
 **Primary Branch:** `main`  
 **Commit Philosophy:** Small, focused commits with descriptive messages
 
@@ -458,7 +458,7 @@ ezinvester/
 
 ## 🧪 Testing
 
-**Comprehensive testing documentation:** <a href="TESTING.md" target="_blank">TESTING.md</a>
+**Comprehensive testing documentation:** [TESTING.md](TESTING.md)
 
 ### Quick Stats
 
@@ -478,25 +478,25 @@ ezinvester/
 | Best Practices | 100 | 100 |
 | SEO | 100 | 100 |
 
-Screenshots: <a href="docs/lighthouse/lighthouse_mobile_validator.png" target="_blank">Mobile</a> | <a href="docs/lighthouse/lighthouse_desktop_validator.png" target="_blank">Desktop</a>
+Screenshots: [Mobile](docs/lighthouse/lighthouse_mobile_validator.png) | [Desktop](docs/lighthouse/lighthouse_desktop_validator.png)
 
 ### W3C Validation
 
 | Template | Screenshot |
 |----------|------------|
-| Login | <a href="docs/validation/login_validator.png" target="_blank">docs/validation/login_validator.png</a> |
-| Register | <a href="docs/validation/register_validator.png" target="_blank">docs/validation/register_validator.png</a> |
-| Dashboard | <a href="docs/validation/dashboard_validator.png" target="_blank">docs/validation/dashboard_validator.png</a> |
-| Asset List | <a href="docs/validation/asset_list_validator.png" target="_blank">docs/validation/asset_list_validator.png</a> |
-| Add Asset | <a href="docs/validation/asset_add_validator.png" target="_blank">docs/validation/asset_add_validator.png</a> |
-| Edit Asset | <a href="docs/validation/asset_edit_validator.png" target="_blank">docs/validation/asset_edit_validator.png</a> |
-| Delete Asset | <a href="docs/validation/asset_delete_validator.png" target="_blank">docs/validation/asset_delete_validator.png</a> |
-| Dividends List | <a href="docs/validation/dividends_list_validator.png" target="_blank">docs/validation/dividends_list_validator.png</a> |
-| Add Dividend | <a href="docs/validation/dividends_add_validator.png" target="_blank">docs/validation/dividends_add_validator.png</a> |
-| Edit Dividend | <a href="docs/validation/dividends_edit_validator.png" target="_blank">docs/validation/dividends_edit_validator.png</a> |
-| Delete Dividend | <a href="docs/validation/dividends_delete_validator.png" target="_blank">docs/validation/dividends_delete_validator.png</a> |
-| 404 Page | <a href="docs/validation/404_validator.png" target="_blank">docs/validation/404_validator.png</a> |
-| CSS | <a href="docs/validation/css_validator.png" target="_blank">docs/validation/css_validator.png</a> |
+| Login | [docs/validation/login_validator.png](docs/validation/login_validator.png) |
+| Register | [docs/validation/register_validator.png](docs/validation/register_validator.png) |
+| Dashboard | [docs/validation/dashboard_validator.png](docs/validation/dashboard_validator.png) |
+| Asset List | [docs/validation/asset_list_validator.png](docs/validation/asset_list_validator.png) |
+| Add Asset | [docs/validation/asset_add_validator.png](docs/validation/asset_add_validator.png) |
+| Edit Asset | [docs/validation/asset_edit_validator.png](docs/validation/asset_edit_validator.png) |
+| Delete Asset | [docs/validation/asset_delete_validator.png](docs/validation/asset_delete_validator.png) |
+| Dividends List | [docs/validation/dividends_list_validator.png](docs/validation/dividends_list_validator.png) |
+| Add Dividend | [docs/validation/dividends_add_validator.png](docs/validation/dividends_add_validator.png) |
+| Edit Dividend | [docs/validation/dividends_edit_validator.png](docs/validation/dividends_edit_validator.png) |
+| Delete Dividend | [docs/validation/dividends_delete_validator.png](docs/validation/dividends_delete_validator.png) |
+| 404 Page | [docs/validation/404_validator.png](docs/validation/404_validator.png) |
+| CSS | [docs/validation/css_validator.png](docs/validation/css_validator.png) |
 
 ### Test Coverage
 
@@ -518,31 +518,31 @@ Screenshots: <a href="docs/lighthouse/lighthouse_mobile_validator.png" target="_
 **yfinance Integration**
 - Library: yfinance by Ran Aroussi
 - License: Apache 2.0
-- Source: <a href="https://github.com/ranaroussi/yfinance" target="_blank">https://github.com/ranaroussi/yfinance</a>
+- Source: https://github.com/ranaroussi/yfinance
 - Usage: Ticker validation and asset name auto-fill
 
 **Chart.js**
 - Library: Chart.js
 - License: MIT
-- Source: <a href="https://www.chartjs.org/" target="_blank">https://www.chartjs.org/</a>
+- Source: https://www.chartjs.org/
 - Usage: Portfolio pie charts
 
 **Bootstrap 5.3**
 - Framework: Bootstrap
 - License: MIT
-- Source: <a href="https://getbootstrap.com/" target="_blank">https://getbootstrap.com/</a>
+- Source: https://getbootstrap.com/
 - Usage: Responsive UI components
 
 **dj-database-url**
 - Library: dj-database-url
 - License: BSD
-- Source: <a href="https://github.com/jazzband/dj-database-url" target="_blank">https://github.com/jazzband/dj-database-url</a>
+- Source: https://github.com/jazzband/dj-database-url
 - Usage: Heroku PostgreSQL URL parsing
 
 **WhiteNoise**
 - Library: WhiteNoise
 - License: MIT
-- Source: <a href="http://whitenoise.evans.io/" target="_blank">http://whitenoise.evans.io/</a>
+- Source: http://whitenoise.evans.io/
 - Usage: Static file serving in production
 
 ### Original Implementation
@@ -560,9 +560,9 @@ All application logic, features and implementations created by Marcus Machado, i
 ### Acknowledgments
 
 - **Code Institute** — Level 5 Full Stack Web Development course
-- **Django Documentation** — <a href="https://docs.djangoproject.com/" target="_blank">https://docs.djangoproject.com/</a>
-- **Bootstrap Documentation** — <a href="https://getbootstrap.com/docs/" target="_blank">https://getbootstrap.com/docs/</a>
-- **Chart.js Documentation** — <a href="https://www.chartjs.org/docs/" target="_blank">https://www.chartjs.org/docs/</a>
+- **Django Documentation** — https://docs.djangoproject.com/
+- **Bootstrap Documentation** — https://getbootstrap.com/docs/
+- **Chart.js Documentation** — https://www.chartjs.org/docs/
 - **Stack Overflow Community** — Problem-solving assistance
 
 ---
@@ -574,9 +574,9 @@ MIT License — Copyright (c) 2026 Marcus Machado
 ---
 
 **Developer:** Marcus Machado  
-**GitHub:** <a href="https://github.com/DonMarcao" target="_blank">@DonMarcao</a>  
+**GitHub:** [@DonMarcao](https://github.com/DonMarcao)  
 **Status:** ✅ Live on Heroku
 
 ---
 
-⭐ **<a href="TESTING.md" target="_blank">View Complete Testing Documentation →</a>** ⭐
+⭐ **[View Complete Testing Documentation →](TESTING.md)** ⭐
