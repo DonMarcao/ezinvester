@@ -458,7 +458,7 @@ ezinvester/
 
 ## 🧪 Testing
 
-**Comprehensive testing documentation:** [TESTING.md](TESTING.md)
+**Comprehensive testing documentation:** [TESTING.md](https://github.com/DonMarcao/ezinvester/blob/main/TESTING.md)
 
 ### Quick Stats
 
@@ -579,4 +579,4 @@ MIT License — Copyright (c) 2026 Marcus Machado
 
 ---
 
-⭐ **[View Complete Testing Documentation →](TESTING.md)** ⭐
+⭐ **[View Complete Testing Documentation →](https://github.com/DonMarcao/ezinvester/blob/main/TESTING.md)** ⭐
