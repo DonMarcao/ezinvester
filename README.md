@@ -439,7 +439,9 @@ ezinvester/
 ├── .python-version
 ├── manage.py
 ├── README.md
-└── TESTING.md
+├── TESTING.md
+├── design_decisions.md
+└── user_stories.md
 ```
 
 ---
