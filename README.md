@@ -14,6 +14,18 @@
 
 ---
 
+## 📸 Screenshots
+
+### Login
+![Login](docs/screenshots/login.png)
+
+### Dashboard
+![Dashboard](docs/screenshots/dashboard.png)
+
+### 404 Page
+![404](docs/screenshots/404.png)
+
+---
 ## 📋 Table of Contents
 
 1. [Project Overview](#-project-overview)
@@ -212,7 +224,7 @@ Wireframes created in Lucid.app during pre-project planning phase.
 | | date | DateField |
 
 Relationships: User → Asset (one-to-many) → Dividend (one-to-many)
-
+![ERD Diagram](docs/erd/ezinvester.png)
 ERD: [docs/erd/ezinvester.png](docs/erd/ezinvester.png)
 
 ---
@@ -270,7 +282,6 @@ Custom 404 page displayed for all invalid URLs when `DEBUG=False`. Includes a "G
 - Current market price via yfinance (real-time P&L)
 - Portfolio performance over time (line chart)
 - Asset type lock on edit (prevent MSFT being saved as Crypto)
-- Multi-currency support
 - Export to CSV
 - PWA / mobile app
 - FII-specific metrics (dividend yield, P/VP)
@@ -321,7 +332,7 @@ Custom 404 page displayed for all invalid URLs when `DEBUG=False`. Includes a "G
 
 - [x] `requirements.txt` updated (`pip freeze > requirements.txt`)
 - [x] `Procfile` created
-- [x] `runtime.txt` created
+- [x] `.python-version` created
 - [x] WhiteNoise configured in `settings.py`
 - [x] `dj-database-url` configured
 - [x] `DEBUG=False` for production
@@ -425,7 +436,7 @@ ezinvester/
 ├── .flake8                 # flake8 config
 ├── Procfile                # Heroku process file
 ├── requirements.txt
-├── runtime.txt
+├── .python-version
 ├── manage.py
 ├── README.md
 └── TESTING.md
