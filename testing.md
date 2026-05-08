@@ -32,7 +32,7 @@
 - **Total Tests:** 53
 - **Pass Rate:** 100% (53 passed)
 - **Critical Bugs:** 0
-- **Known Issues:** 1 (cosmetic, non-blocking)
+**Known Issues:** 2 (both cosmetic/non-blocking)
 
 **Validation:**
 - **HTML:** 0 errors (W3C) ✅
@@ -271,6 +271,7 @@ Screenshots available in `docs/lighthouse/`.
 | Bug # | Description | Severity | Status |
 |-------|-------------|----------|--------|
 | #1 | With DEBUG=False static files not served locally | 🟢 Low | Open — resolved in production by WhiteNoise |
+| #2 | Asset type not validated against ticker — user can save BTC-USD as REIT or Treasury or any other | 🟢 Low | Open — auto-detection via yfinance `quoteType` considered but discarded due to inconsistent data for asset types. Future fix planned. |
 
 ### Fixed Bugs
 

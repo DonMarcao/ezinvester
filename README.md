@@ -123,6 +123,22 @@ Forms for adding and editing assets and dividends were implemented as dedicated 
 
 ---
 
+### Market & Currency — USD vs GBP
+
+The application was built targeting global markets with USD as the base currency rather than UK/GBP markets.
+
+**Reason:** The developer has domain knowledge of global investment instruments (US stocks, ETFs, REITs, crypto) and Brazilian FIIs. USD is the standard currency for global financial data via yfinance, which is the API used for ticker validation and name auto-fill. Switching to GBP would require:
+
+- A different data source (yfinance does not reliably serve LSE tickers)
+- Currency conversion logic adding significant complexity
+- Redesigning the data model mid-development
+
+**Tutor feedback:** Currency change was suggested twice during project meetings. After evaluation, the decision was made to maintain USD/global markets to preserve data integrity, API compatibility, and project scope within the deadline.
+
+*Future improvement:* Multi-currency support (GBP, BRL, EUR) is listed as a V2 feature once the core product is stable.
+
+---
+
 **Forms — Inline Toggle vs Dedicated Pages**
 
 A middle-ground option was also considered: hiding forms inline on the list page, revealed via a JS toggle — avoiding full page navigation without the complexity of a modal. This approach was noted as a cleaner UX option that maintains accessibility and requires minimal JavaScript. Implementation deferred to avoid scope creep during core development.
@@ -258,6 +274,7 @@ Custom 404 page displayed for all invalid URLs when `DEBUG=False`. Includes a "G
 - Export to CSV
 - PWA / mobile app
 - FII-specific metrics (dividend yield, P/VP)
+- Multi-currency support — GBP, BRL and EUR planned for V2. USD chosen for V1 due to yfinance API compatibility and developer domain knowledge of global markets.
 
 ---
 
