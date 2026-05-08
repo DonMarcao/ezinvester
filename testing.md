@@ -32,7 +32,7 @@
 - **Total Tests:** 53
 - **Pass Rate:** 100% (53 passed)
 - **Critical Bugs:** 0
-**Known Issues:** 2 (both cosmetic/non-blocking)
+- **Known Issues:** 2 (both cosmetic/non-blocking)
 
 **Validation:**
 - **HTML:** 0 errors (W3C) ✅
