@@ -4,7 +4,20 @@
 **Developer:** Marcus Machado  
 **Testing Date:** April 2026  
 **Version:** 1.0.0
+---
 
+## Testing entries examples
+
+- NVDA: NVIDIA Corporation
+- AAPL: Apple Inc.
+- MSFT: Microsoft Corporation
+- AMZN: Amazon.com, Inc.
+- META: Meta Platforms, Inc.
+- TSLA: Tesla, Inc.
+- AMD: Advanced Micro Devices, Inc.
+- PLUG: Plug Power Inc.
+
+---
 [← Back to README](README.md)
 
 ---
